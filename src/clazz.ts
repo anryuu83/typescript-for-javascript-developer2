@@ -1,19 +1,16 @@
 export {};
 
 class Person {
-  name: string = 'anryu';
-  readonly age: number = 30;
-  static address: string = 'kashiwa';
-  sayName() {
-    console.log(this.name);
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
   }
-  static printAddress() {
-    console.log(this.address);
+  profile() {
+    return `name:${this.name},age:${this.age}`;
   }
 }
 
-let person = new Person();
-console.log(person);
-person.sayName();
-Person.printAddress();
-console.log(Person.address);
+let taro = new Person('taro', 13);
+console.log(taro.profile());
