@@ -1,22 +1,34 @@
 export {};
 
-class MynumberCard {
+class Person {
   private _name: string;
-  private _serialNumber: string;
-  constructor(name: string, serialNumber: string) {
+  private _age: number;
+
+  constructor(name: string, age: number) {
     this._name = name;
-    this._serialNumber = serialNumber;
+    this._age = age;
   }
 
-  get name(): string {
+  get name() {
+    console.log('get name called');
     return this._name;
   }
-  set serialNumber(serialNumber: string) {
-    this._serialNumber = serialNumber;
+  set name(name: string) {
+    console.log('set name called');
+    this._name = name;
+  }
+  get age() {
+    console.log('get age called');
+    return this._age;
+  }
+  set age(age: number) {
+    console.log('set age called');
+    this._age = age;
   }
 }
 
-let mynumberCard = new MynumberCard('anryu', '8838');
-console.log(mynumberCard.name);
-mynumberCard.serialNumber = '1234';
-console.log(mynumberCard.serialNumber);
+let person = new Person('naryu', 33);
+console.log(person.name);
+person.name = 'anzhe';
+console.log(person.age);
+person.age = 37;
