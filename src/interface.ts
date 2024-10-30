@@ -1,18 +1,22 @@
 export {};
 
-type Profile = {
-  name: string;
-  age: number;
-};
-
-interface ProfileInterface {
-  name: string;
-  age: number;
+interface Attacker {
+  offense(): string;
 }
 
-let person: ProfileInterface = {
-  name: 'anryu',
-  age: 36,
-};
+interface Defender {
+  defense(): string;
+}
 
-console.log({ person });
+class TwoWayPlayer implements Attacker, Defender {
+  offense() {
+    return 'I am good at offense';
+  }
+  defense(): string {
+    return 'I am good at defense';
+  }
+}
+
+let ace = new TwoWayPlayer();
+console.log(ace.defense());
+console.log(ace.offense());
