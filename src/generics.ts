@@ -13,3 +13,7 @@ let m2 = new Mirror('anryu');
 console.log(m2.print());
 let m3 = new Mirror(false);
 console.log(m3.print());
+
+const echo = <T, K>(value: T, value2: K): K => {
+  return value2;
+};
