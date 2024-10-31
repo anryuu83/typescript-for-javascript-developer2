@@ -1,11 +1,15 @@
 export {};
 
-class VisaCard {
-  public readonly _user: string;
-  constructor(user: string) {
-    this._user = user;
-  }
-}
+type Profile = {
+  name: string;
+  age: number;
+};
 
-let visacard = new VisaCard('anryu');
-console.log(visacard);
+type Person = Readonly<Profile>;
+let foo: Person = {
+  name: 'an',
+  age: 2,
+};
+
+// foo.age = 3;
+console.log(foo);
